@@ -1,0 +1,46 @@
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan  = new Scanner (System.in);
+		
+		System.out.println("OTEL REZERVASYON UYGULAMAMIZA HOŞGELDİNİZ ");
+		System.out.println("Adınızı Giriniz: ");
+		String ad = scan.nextLine(); 
+		System.out.println("Soyadınızı Giriniz: ");
+		String soyad = scan.nextLine();
+		System.out.println("TC'nizi Giriniz: ");
+		String tckn = scan.nextLine();
+		System.out.println("Telefon Numaranızı Giriniz: ");
+		String telefon = scan.nextLine();
+
+		System.out.println("Email Adresinizi Giriniz: ");
+		String email = scan.nextLine();
+
+		System.out.println("Cinsiyetinizi Giriniz (Erkek/Kadın): ");
+		String cinsiyet = scan.nextLine();
+		
+		
+		Otel otel = new Otel();
+		
+		otel.setTelefonNo(telefon);
+		otel.setEmail(email);
+		otel.setCinsiyet(cinsiyet);
+		
+		System.out.println("\nOda Durumları:");
+		otel.odalariGoster();
+		System.out.println("1-30 Numaralı Odalar : Ekonomik Odalar (1000 TL) ");
+		System.out.println("31-36 Numaralı Odalar : Premium Odalar (4000 TL) ");
+		System.out.println("Lütfen Kalmak İstediğiniz Odayı/Odaları Seçiniz:  ");
+		int odaNo = scan.nextInt();
+		otel.odaSecimi(odaNo);
+		
+		System.out.println("------------------------------------------");
+		System.out.println("ADINIZ VE SOYADINIZ: " + ad + " " + soyad);
+		System.out.println("TELEFON: " + otel.getTelefonNo());
+		System.out.println("EMAIL: " + otel.getEmail());
+		System.out.println("CİNSİYET: " + otel.getCinsiyet());
+		System.out.println("TC'NİZ: " + tckn);
+		System.out.println("ALMAK İSTEDİĞİNİZ ODA NUMARASI: " + odaNo);
+		System.out.println("ÖDEYECEĞİNİZ FİYAT: " + otel.getFiyat() + "TL");
+		System.out.println("REZERVASYONUNUZ BAŞARIYLA OLUŞTURULMUŞTUR. İYİ KONAKLAMALAR.");
+	}
+
